@@ -8,6 +8,8 @@
 
 Projeto para assinatura da Newsletter sobre tecnologia TechNow. O usuário digita o nome e o email nos campos de input. Ao clicar no botão de confirmar, é enviado uma requisição para o serviço Amazon Lambda com o payload contendo o nome e email. O Lambda conecta-se ao serviço de email Amazon Simple Email Service (Amazon SES) para o envio da confirmação da assinatura para o email do usuário.
 
+O projeto foi baseado no tutorial do canal [Fernanda Kipper | Dev](https://www.youtube.com/live/bKeCAa5ib7g?si=Kgc_9_8bgCDiyTmN).
+
 ## Tecnologias utilizadas
 
 * [Next.js](https://www.java.com/)
@@ -18,3 +20,4 @@ Projeto para assinatura da Newsletter sobre tecnologia TechNow. O usuário digit
 
 ## Página Inicial
 
+![Site homepage](/public/pagina-inicial.png)
