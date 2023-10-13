@@ -50,23 +50,32 @@ export default function Home() {
 
   const limparCampos = () => {
     const allInput = document.querySelectorAll('input');
-    allInput.forEach((input) => input.value = '')
+    allInput.forEach((input) => input.value = '');
+    setName('');
+    setEmail('');
+
+    const btnSubmit = document.getElementById('btn-submit');
+    btnSubmit?.setAttribute("disabled", "true");
+    setTimeout(() => btnSubmit?.removeAttribute("disabled"), 5000)
   }
 
   const validarInfo = () => {
 
-    let re = /^(\w+[\.-]?\w+)@(\w+[\.-]?\w+)(\.\w{2,3})$/;
+    console.log("name: " + name);
+    console.log("email: " + email);
+
+    let emailRegex = /^(\w+[\.-]?\w+)@(\w+[\.-]?\w+)(\.\w{2,3})$/;
 
     if (name.length == 0) {
       toastErro("Nome vazio!");
       return false;
     }
 
-    if (!re.test(email) || email.length == 0) {
+    if (!emailRegex.test(email) || email.length == 0) {
       toastErro("Email inválido!");
       return false;
     }
-
+   
     limparCampos();
 
     return true;
@@ -106,7 +115,7 @@ export default function Home() {
             onChange={e => setEmail(e.target.value)}
             placeholder='Digite seu email'
           />
-          <button onClick={submit} className={styles.btn}>
+          <button onClick={submit} className={styles.btn} id="btn-submit">
             <RightArrowIcon />
           </button>
         </div>
