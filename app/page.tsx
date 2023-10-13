@@ -61,9 +61,6 @@ export default function Home() {
 
   const validarInfo = () => {
 
-    console.log("name: " + name);
-    console.log("email: " + email);
-
     let emailRegex = /^(\w+[\.-]?\w+)@(\w+[\.-]?\w+)(\.\w{2,3})$/;
 
     if (name.length == 0) {
